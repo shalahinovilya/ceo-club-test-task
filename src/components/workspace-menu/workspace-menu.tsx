@@ -52,7 +52,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
           </h1>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" sideOffset={isMobile ? 4 : -4} alignOffset={8} className="w-[236px] z-[60]">
+      <DropdownMenuContent align="start" sideOffset={isMobile ? 4 : 4} alignOffset={8} className="w-[236px] z-[60]">
         <DropdownMenuGroup>
           <DropdownMenuItem className="gap-2">
             <div className="flex h-4 w-4 items-center justify-center rounded text-xs font-medium bg-sidebar-primary text-sidebar-primary-foreground">
