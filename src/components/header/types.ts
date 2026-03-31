@@ -15,7 +15,5 @@ export interface HeaderProps
   onMessageClick?: () => void
   onHelpClick?: () => void
   onAIAssistantClick?: () => void
-  onSidebarToggle?: () => void
-  sidebarOpen?: boolean
   aiAssistantLabel?: string
 }

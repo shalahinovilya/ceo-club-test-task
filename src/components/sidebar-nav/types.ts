@@ -15,5 +15,4 @@ export interface SidebarNavProps {
   headerTitle?: string
   headerInitials?: string
   headerLogo?: React.ReactNode
-  onHeaderToggle?: () => void
 }

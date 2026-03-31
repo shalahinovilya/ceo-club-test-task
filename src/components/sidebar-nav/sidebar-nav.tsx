@@ -41,17 +41,15 @@ const SidebarNav = React.forwardRef<HTMLDivElement, SidebarNavProps>(
       headerTitle = DEFAULT_HEADER_TITLE,
       headerInitials = DEFAULT_HEADER_INITIALS,
       headerLogo,
-      onHeaderToggle,
     },
     ref
   ) => {
     return (
-      <Sidebar ref={ref}>
+      <Sidebar ref={ref} collapsible="icon">
         <SidebarHeader
           title={headerTitle}
           initials={headerInitials}
           logo={headerLogo}
-          onToggle={onHeaderToggle}
         />
         <SidebarContent>
           {/* Main Navigation Group */}

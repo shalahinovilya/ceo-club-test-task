@@ -6,7 +6,7 @@ import {
   MoreVerticalIcon,
   SparklesIcon,
 } from "@hugeicons/core-free-icons"
-import { SidebarOpenIcon } from "@/icons/sidebar-open-icon"
+import { SidebarTrigger } from "../ui/sidebar"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import {
@@ -36,8 +36,6 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
       onMessageClick,
       onHelpClick,
       onAIAssistantClick,
-      onSidebarToggle,
-      sidebarOpen = false,
       aiAssistantLabel = DEFAULT_AI_ASSISTANT_LABEL,
       ...props
     },
@@ -45,23 +43,13 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
   ) => {
     return (
       <header ref={ref} className={cn(headerVariants({ variant, className }))} {...props}>
-        {/* Left: Sidebar Toggle (Mobile) */}
-        {onSidebarToggle && (
-            <div className="flex items-center">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onSidebarToggle}
-            aria-label="Toggle sidebar"
-            className="md:hidden rounded-md"
-          >
-            <SidebarOpenIcon />
-          </Button>
-          <div className="flex h-6 items-center justify-center px-2 md:hidden">
+        {/* Left: Sidebar Toggle - Mobile only */}
+        <div className="flex items-center sm:hidden">
+          <SidebarTrigger className="rounded-md" />
+          <div className="flex h-6 items-center justify-center px-2">
             <div className="w-[1.5px] h-full bg-border" />
           </div>
-          </div>
-        )}
+        </div>
 
         {/* Breadcrumb */}
         {breadcrumbs && breadcrumbs.length > 0 && (

@@ -37,16 +37,16 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <button
-          className="flex-1 flex items-center gap-2 rounded-md hover:bg-muted transition-colors text-left outline-none"
+          className="flex w-full items-center gap-2 overflow-hidden rounded-md px-2 hover:bg-muted transition-[width,padding] text-left text-sm outline-none group-data-[collapsible=icon]:w-8 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:justify-center"
         >
           {logo ? (
             <div className="shrink-0">{logo}</div>
           ) : (
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary text-sm font-medium text-sidebar-primary-foreground shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary font-medium text-sidebar-primary-foreground shrink-0">
               {initials}
             </div>
           )}
-          <h1 className="flex-1 truncate text-base font-medium text-foreground">
+          <h1 className="flex-1 truncate font-medium text-foreground transition-[margin,opacity] duration-200 group-data-[collapsible=icon]:-ml-8 group-data-[collapsible=icon]:opacity-0">
             {title}
           </h1>
         </button>

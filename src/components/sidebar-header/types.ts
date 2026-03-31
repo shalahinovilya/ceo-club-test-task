@@ -8,6 +8,4 @@ export interface SidebarHeaderProps
   logo?: React.ReactNode
   title?: string
   initials?: string
-  onToggle?: () => void
-  showToggle?: boolean
 }

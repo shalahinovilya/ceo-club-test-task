@@ -119,23 +119,9 @@ function ComboboxItem({
   )
 }
 
-function ComboboxEmpty({ className, ...props }: ComboboxPrimitive.Empty.Props) {
-  return (
-    <ComboboxPrimitive.Empty
-      data-slot="combobox-empty"
-      className={cn(
-        "w-full py-2 text-center text-sm text-muted-foreground",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
 export {
   Combobox,
   ComboboxInput,
   ComboboxList,
   ComboboxItem,
-  ComboboxEmpty,
 }
