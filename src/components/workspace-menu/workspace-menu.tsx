@@ -49,7 +49,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
               C
             </div>
             <span className="flex-1">CEO Club</span>
-            <HugeiconsIcon icon={Tick01Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={Tick01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
           </DropdownMenuItem>
           <DropdownMenuItem className="gap-2">
             <div className="flex h-4 w-4 items-center justify-center rounded text-xs font-medium bg-blue-500 text-white">
@@ -58,7 +58,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
             <span>Another Workspace</span>
           </DropdownMenuItem>
           <DropdownMenuItem className="gap-2">
-            <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span>Створити робочій простір</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -67,15 +67,15 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
 
         <DropdownMenuGroup>
           <DropdownMenuItem className="gap-2">
-            <HugeiconsIcon icon={User02Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={User02Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span>Обліковий запис</span>
           </DropdownMenuItem>
           <DropdownMenuItem className="gap-2">
-            <HugeiconsIcon icon={Settings01Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={Settings01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span>Робочий простір</span>
           </DropdownMenuItem>
           <DropdownMenuItem className="gap-2">
-            <HugeiconsIcon icon={Sun01Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={Sun01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span className="flex-1">Вигляд</span>
             <span className="text-xs">→</span>
           </DropdownMenuItem>
@@ -85,7 +85,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
 
         <DropdownMenuGroup>
           <DropdownMenuItem className="gap-2 text-destructive">
-            <HugeiconsIcon icon={Logout01Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={Logout01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span>Вийти</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>

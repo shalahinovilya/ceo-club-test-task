@@ -35,7 +35,7 @@ function App() {
         <Header
           breadcrumbs={[
             {
-              icon: <HugeiconsIcon icon={Blockchain01Icon} size={16} color="currentColor" strokeWidth={2} />,
+              icon: <HugeiconsIcon icon={Blockchain01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />,
               label: "Object name",
             },
           ]}

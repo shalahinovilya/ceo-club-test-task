@@ -32,7 +32,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       >
         {/* Icon Container */}
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-          {icon || <HugeiconsIcon icon={Blockchain01Icon} size={16} color="currentColor" strokeWidth={2} className="text-muted-foreground" />}
+          {icon || <HugeiconsIcon icon={Blockchain01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground" />}
         </div>
 
         {/* Content */}
@@ -42,8 +42,8 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         </div>
 
         {/* Button */}
-        <Button onClick={onButtonClick} className="gap-2">
-          <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={2} />
+        <Button onClick={onButtonClick} className="gap-2 cursor-pointer py-1.5">
+          <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
           {buttonLabel}
         </Button>
       </div>

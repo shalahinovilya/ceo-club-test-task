@@ -56,9 +56,9 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             className="md:hidden rounded-md"
           >
             {sidebarOpen ? (
-              <HugeiconsIcon icon={PanelLeftCloseIcon} size={16} color="currentColor" strokeWidth={2} />
+              <HugeiconsIcon icon={PanelLeftCloseIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             ) : (
-              <HugeiconsIcon icon={PanelLeftOpenIcon} size={16} color="currentColor" strokeWidth={2} />
+              <HugeiconsIcon icon={PanelLeftOpenIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             )}
           </Button>
         )}
@@ -101,7 +101,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Messages"
             className="rounded-md"
           >
-            <HugeiconsIcon icon={MessageMultiple02Icon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={MessageMultiple02Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
           </Button>
 
           {/* Help Button */}
@@ -112,7 +112,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Help"
             className="rounded-md"
           >
-            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" strokeWidth={2} />
+            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
           </Button>
 
           {/* More Options Dropdown */}
@@ -124,7 +124,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
                 aria-label="More options"
                 className="rounded-md"
               >
-                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={2} />
+                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -145,7 +145,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
               onClick={onAIAssistantClick}
               className="gap-2 rounded-md text-foreground"
             >
-              <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" strokeWidth={2} className="text-muted-foreground shrink-0" />
+              <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
               <span className="hidden sm:inline">{aiAssistantLabel}</span>
             </Button>
           </div>
