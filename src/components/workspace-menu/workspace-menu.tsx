@@ -42,7 +42,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
           {logo ? (
             <div className="shrink-0">{logo}</div>
           ) : (
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary font-medium text-sidebar-primary-foreground shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary font-normal text-sidebar-primary-foreground shrink-0">
               {initials}
             </div>
           )}
