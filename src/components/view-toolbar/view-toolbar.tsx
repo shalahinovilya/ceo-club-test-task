@@ -90,10 +90,10 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="text-sm font-medium text-foreground max-w-fit truncate gap-2 py-1.5 h-auto border-[0.5px]"
+                className="text-sm font-medium text-foreground min-w-0 flex-1 gap-2 py-1.5 h-auto border-[0.5px]"
               >
                 <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0 text-muted-foreground" />
-                <span className="truncate max-w-[60px] sm:max-w-none">{selectedView}</span>
+                <span className="truncate">{selectedView}</span>
                 <ChevronDownIcon />
               </Button>
             </DropdownMenuTrigger>

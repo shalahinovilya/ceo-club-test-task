@@ -31,7 +31,7 @@ const Toolbar = React.forwardRef<HTMLDivElement, ToolbarProps>(
 )
 Toolbar.displayName = "Toolbar"
 
-const toolbarLeftVariants = cva("flex items-center gap-2", {
+const toolbarLeftVariants = cva("flex items-center gap-2 min-w-0", {
   variants: {
     variant: {
       default: "",
