@@ -37,6 +37,13 @@ import {
   ComboboxItem,
 } from "../ui/combobox"
 import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "../ui/sheet"
+import { useIsMobile } from "@/hooks/use-mobile"
+import {
   DEFAULT_VIEW_NAME,
   DEFAULT_VIEWS,
   DEFAULT_ATTRIBUTES,
@@ -60,10 +67,12 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
     },
     ref
   ) => {
+    const isMobile = useIsMobile()
     const [selectedView, setSelectedView] = React.useState(viewName)
     const [visibleAttributes, setVisibleAttributes] = React.useState<string[]>(
       DEFAULT_ATTRIBUTES.map((a) => a.value)
     )
+    const [attributesSheetOpen, setAttributesSheetOpen] = React.useState(false)
 
     const handleViewChange = (value: string) => {
       setSelectedView(value)
@@ -72,6 +81,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
 
 
     return (
+      <>
       <ToolbarPrimitive ref={ref}>
         {/* Left: View Dropdown */}
         <ToolbarLeft>
@@ -167,40 +177,47 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-44">
               <DropdownMenuGroup>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="gap-2">
+                {isMobile ? (
+                  <DropdownMenuItem onClick={() => setAttributesSheetOpen(true)} className="gap-2">
                     <HugeiconsIcon icon={EyeIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
                     <span>Видимі атрибути</span>
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="p-0 w-[237px]">
-                    <Combobox
-                      multiple
-                      value={visibleAttributes}
-                      onValueChange={setVisibleAttributes}
-                    >
-                      <div className="p-1">
-                        <ComboboxInput
-                          placeholder="Пошук..."
-                          showClear={false}
-                          showTrigger={false}
-                          className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
-                        />
-                      </div>
-                      <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto">
-                        {DEFAULT_ATTRIBUTES.map((attr) => (
-                          <ComboboxItem
-                            key={attr.value}
-                            value={attr.value}
-                            className="h-7 max-h-7 py-1 pl-2.5 pr-8 gap-1.5"
-                          >
-                            <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
-                            {attr.label}
-                          </ComboboxItem>
-                        ))}
-                      </ComboboxList>
-                    </Combobox>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
+                  </DropdownMenuItem>
+                ) : (
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="gap-2">
+                      <HugeiconsIcon icon={EyeIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                      <span>Видимі атрибути</span>
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent className="p-0 w-[237px]">
+                      <Combobox
+                        multiple
+                        value={visibleAttributes}
+                        onValueChange={setVisibleAttributes}
+                      >
+                        <div className="p-1">
+                          <ComboboxInput
+                            placeholder="Пошук..."
+                            showClear={false}
+                            showTrigger={false}
+                            className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
+                          />
+                        </div>
+                        <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto">
+                          {DEFAULT_ATTRIBUTES.map((attr) => (
+                            <ComboboxItem
+                              key={attr.value}
+                              value={attr.value}
+                              className="h-7 max-h-7 py-1 pl-2.5 pr-8 gap-1.5"
+                            >
+                              <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                              {attr.label}
+                            </ComboboxItem>
+                          ))}
+                        </ComboboxList>
+                      </Combobox>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
+                )}
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger className="gap-2">
                     <HugeiconsIcon icon={Layers01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
@@ -233,6 +250,44 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
           </Button>
         </ToolbarRight>
       </ToolbarPrimitive>
+
+      {/* Attributes Sheet (Mobile Only) */}
+      <Sheet open={attributesSheetOpen} onOpenChange={setAttributesSheetOpen}>
+        <SheetContent side="bottom" className="h-[80vh]">
+          <SheetHeader>
+            <SheetTitle>Видимі атрибути</SheetTitle>
+          </SheetHeader>
+          <div className="mt-4">
+            <Combobox
+              multiple
+              value={visibleAttributes}
+              onValueChange={setVisibleAttributes}
+            >
+              <div className="mb-3">
+                <ComboboxInput
+                  placeholder="Пошук..."
+                  showClear={false}
+                  showTrigger={false}
+                  className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
+                />
+              </div>
+              <ComboboxList className="max-h-[calc(80vh-150px)] overflow-y-auto">
+                {DEFAULT_ATTRIBUTES.map((attr) => (
+                  <ComboboxItem
+                    key={attr.value}
+                    value={attr.value}
+                    className="h-7 max-h-7 py-1 pl-2.5 pr-8 gap-1.5"
+                  >
+                    <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                    {attr.label}
+                  </ComboboxItem>
+                ))}
+              </ComboboxList>
+            </Combobox>
+          </div>
+        </SheetContent>
+      </Sheet>
+      </>
     )
   }
 )
