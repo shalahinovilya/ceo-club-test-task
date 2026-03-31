@@ -3,7 +3,8 @@ import { Header } from "./components/header"
 import { SidebarNav } from "./components/sidebar-nav"
 import { ViewToolbar } from "./components/view-toolbar"
 import { EmptyState } from "./components/empty-state"
-import { Database } from "lucide-react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { Database01Icon } from "@hugeicons/core-free-icons"
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
@@ -34,7 +35,7 @@ function App() {
         <Header
           breadcrumbs={[
             {
-              icon: <Database className="h-4 w-4" />,
+              icon: <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" />,
               label: "Object name",
             },
           ]}

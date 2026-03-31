@@ -1,5 +1,14 @@
 import * as React from "react"
-import { PanelLeftClose, User, Settings, Sun, LogOut, Plus, Check } from "lucide-react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  PanelLeftCloseIcon,
+  User02Icon,
+  Settings01Icon,
+  Sun01Icon,
+  Logout01Icon,
+  PlusSignIcon,
+  Tick01Icon,
+} from "@hugeicons/core-free-icons"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import {
@@ -60,7 +69,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
                   C
                 </div>
                 <span className="flex-1">CEO Club</span>
-                <Check className="h-4 w-4" />
+                <HugeiconsIcon icon={Tick01Icon} size={16} color="currentColor" />
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2">
                 <div className="flex h-4 w-4 items-center justify-center rounded text-xs font-medium bg-blue-500 text-white">
@@ -69,7 +78,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
                 <span>Another Workspace</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2">
-                <Plus className="h-4 w-4" />
+                <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" />
                 <span>Створити робочій простір</span>
               </DropdownMenuItem>
             </DropdownMenuGroup>
@@ -79,15 +88,15 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
             {/* Settings */}
             <DropdownMenuGroup>
               <DropdownMenuItem className="gap-2">
-                <User className="h-4 w-4" />
+                <HugeiconsIcon icon={User02Icon} size={16} color="currentColor" />
                 <span>Обліковий запис</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2">
-                <Settings className="h-4 w-4" />
+                <HugeiconsIcon icon={Settings01Icon} size={16} color="currentColor" />
                 <span>Робочий простір</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2">
-                <Sun className="h-4 w-4" />
+                <HugeiconsIcon icon={Sun01Icon} size={16} color="currentColor" />
                 <span className="flex-1">Вигляд</span>
                 <span className="text-xs">→</span>
               </DropdownMenuItem>
@@ -98,7 +107,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
             {/* Logout */}
             <DropdownMenuGroup>
               <DropdownMenuItem className="gap-2 text-destructive">
-                <LogOut className="h-4 w-4" />
+                <HugeiconsIcon icon={Logout01Icon} size={16} color="currentColor" />
                 <span>Вийти</span>
               </DropdownMenuItem>
             </DropdownMenuGroup>
@@ -114,7 +123,7 @@ const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
             aria-label="Close sidebar"
             className="rounded-md shrink-0"
           >
-            <PanelLeftClose className="h-4 w-4" />
+            <HugeiconsIcon icon={PanelLeftCloseIcon} size={16} color="currentColor" />
           </Button>
         )}
       </div>

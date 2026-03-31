@@ -1,5 +1,6 @@
 import * as React from "react"
-import { HelpCircle } from "lucide-react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { HelpCircleIcon } from "@hugeicons/core-free-icons"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import { HELP_ICON_ARIA_LABEL } from "./constants"
@@ -26,7 +27,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
             aria-label={HELP_ICON_ARIA_LABEL}
             className="rounded-md"
           >
-            <HelpCircle className="h-4 w-4" />
+            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" />
           </Button>
         )}
       </div>

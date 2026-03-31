@@ -1,5 +1,13 @@
 import * as React from "react"
-import { MessageSquare, HelpCircle, MoreVertical, Sparkles, PanelLeftOpen, PanelLeftClose } from "lucide-react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  Message01Icon,
+  HelpCircleIcon,
+  MoreVerticalIcon,
+  SparklesIcon,
+  PanelLeftOpenIcon,
+  PanelLeftCloseIcon,
+} from "@hugeicons/core-free-icons"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import {
@@ -48,9 +56,9 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             className="md:hidden rounded-md"
           >
             {sidebarOpen ? (
-              <PanelLeftClose className="h-4 w-4" />
+              <HugeiconsIcon icon={PanelLeftCloseIcon} size={16} color="currentColor" />
             ) : (
-              <PanelLeftOpen className="h-4 w-4" />
+              <HugeiconsIcon icon={PanelLeftOpenIcon} size={16} color="currentColor" />
             )}
           </Button>
         )}
@@ -93,7 +101,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Messages"
             className="rounded-md"
           >
-            <MessageSquare className="h-4 w-4" />
+            <HugeiconsIcon icon={Message01Icon} size={16} color="currentColor" />
           </Button>
 
           {/* Help Button */}
@@ -104,7 +112,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Help"
             className="rounded-md"
           >
-            <HelpCircle className="h-4 w-4" />
+            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" />
           </Button>
 
           {/* More Options Dropdown */}
@@ -116,7 +124,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
                 aria-label="More options"
                 className="rounded-md"
               >
-                <MoreVertical className="h-4 w-4" />
+                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -137,7 +145,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
               onClick={onAIAssistantClick}
               className="gap-2 rounded-md text-foreground"
             >
-              <Sparkles className="h-4 w-4 stroke-muted-foreground" />
+              <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" className="text-muted-foreground" />
               <span className="hidden sm:inline">{aiAssistantLabel}</span>
             </Button>
           </div>

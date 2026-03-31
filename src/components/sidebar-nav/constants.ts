@@ -3,16 +3,16 @@ export const DEFAULT_HEADER_INITIALS = "CE"
 export const RECORDS_LABEL = "Записи"
 
 export const MAIN_ITEMS_LABELS = [
-  { label: "Головна", iconType: "home", isActive: true },
-  { label: "Сповіщення", iconType: "bell" },
-  { label: "Завдання", iconType: "checkSquare" },
-  { label: "Звіти", iconType: "barChart" },
-  { label: "Журнал дій", iconType: "clock" },
+  { label: "Головна", iconType: "home-01", isActive: true },
+  { label: "Сповіщення", iconType: "notification-square" },
+  { label: "Завдання", iconType: "checkmark-square-02" },
+  { label: "Звіти", iconType: "analytics-01" },
+  { label: "Журнал дій", iconType: "activity-03" },
 ]
 
 export const RECORDS_ITEMS_LABELS = [
-  { label: "Object name", iconType: "checkSquare" },
-  { label: "Object name", iconType: "checkSquare" },
-  { label: "Object name", iconType: "checkSquare" },
-  { label: "Object name", iconType: "checkSquare" },
+  { label: "Object name", iconType: "blockchain-01" },
+  { label: "Object name", iconType: "blockchain-01" },
+  { label: "Object name", iconType: "blockchain-01" },
+  { label: "Object name", iconType: "blockchain-01" },
 ]

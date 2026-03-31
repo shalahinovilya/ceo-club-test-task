@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Plus } from "lucide-react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { PlusSignIcon } from "@hugeicons/core-free-icons"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import {
@@ -31,7 +32,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       >
         {/* Icon Container */}
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-          {icon || <Plus className="h-4 w-4 text-muted-foreground" />}
+          {icon || <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" className="text-muted-foreground" />}
         </div>
 
         {/* Content */}
