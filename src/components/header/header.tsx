@@ -143,7 +143,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
               variant="outline"
               size="sm"
               onClick={onAIAssistantClick}
-              className="gap-2 rounded-md text-foreground border-[0.5px] w-8 h-8 sm:w-auto sm:h-auto"
+              className="gap-2 rounded-md text-foreground border-[0.5px] w-8 h-8 sm:w-auto sm:h-auto sm:px-[7px]! sm:py-1.5!"
             >
               <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
               <span className="hidden sm:inline">{aiAssistantLabel}</span>
