@@ -148,7 +148,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
           {/* Add Button (Primary) */}
           <Button
             variant="default"
-            className="text-sm font-medium text-primary-foreground md:px-2.5 py-1.5 h-auto cursor-pointer"
+            className="text-sm font-medium text-primary-foreground md:px-2.5 cursor-pointer"
             onClick={onAddClick}
           >
             <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0" />

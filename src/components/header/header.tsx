@@ -124,7 +124,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
                 aria-label="More options"
                 className="rounded-md"
               >
-                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={1} absoluteStrokeWidth />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -143,7 +143,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
               variant="outline"
               size="sm"
               onClick={onAIAssistantClick}
-              className="gap-2 rounded-md text-foreground"
+              className="gap-2 rounded-md text-foreground border-[0.5px]"
             >
               <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
               <span className="hidden sm:inline">{aiAssistantLabel}</span>
