@@ -44,7 +44,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
     return (
       <header ref={ref} className={cn(headerVariants({ variant, className }))} {...props}>
         {/* Left: Sidebar Toggle - Mobile only */}
-        <div className="flex items-center sm:hidden">
+        <div className="flex items-center md:hidden">
           <SidebarTrigger className="rounded-md" />
           <div className="flex h-6 items-center justify-center px-2">
             <div className="w-[1.5px] h-full bg-border" />
