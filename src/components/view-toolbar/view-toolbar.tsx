@@ -98,7 +98,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="text-sm font-medium text-foreground border-[0.5px]"
+                className="text-sm font-medium text-foreground border-[0.5px] w-8 md:w-auto"
               >
                 <HugeiconsIcon icon={FilterIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0 text-muted-foreground" />
                 <span className="hidden md:inline">{FILTER_LABEL_UK}</span>
@@ -118,7 +118,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="text-sm font-medium text-foreground border-[0.5px]"
+                className="text-sm font-medium text-foreground border-[0.5px] w-8 md:w-auto"
               >
                 <HugeiconsIcon icon={ArrowUpDownIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0 text-muted-foreground" />
                 <span className="hidden md:inline">{SORT_LABEL_UK}</span>
@@ -148,7 +148,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
           {/* Add Button (Primary) */}
           <Button
             variant="default"
-            className="text-sm font-medium text-primary-foreground md:px-2.5 cursor-pointer"
+            className="text-sm font-medium text-primary-foreground md:px-2.5 cursor-pointer w-8 md:w-auto"
             onClick={onAddClick}
           >
             <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0" />

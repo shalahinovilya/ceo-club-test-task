@@ -5,9 +5,8 @@ import {
   HelpCircleIcon,
   MoreVerticalIcon,
   SparklesIcon,
-  PanelLeftOpenIcon,
-  PanelLeftCloseIcon,
 } from "@hugeicons/core-free-icons"
+import { SidebarOpenIcon } from "@/icons/sidebar-open-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 import {
@@ -48,6 +47,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
       <header ref={ref} className={cn(headerVariants({ variant, className }))} {...props}>
         {/* Left: Sidebar Toggle (Mobile) */}
         {onSidebarToggle && (
+            <div className="flex items-center">
           <Button
             variant="ghost"
             size="icon"
@@ -55,12 +55,12 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Toggle sidebar"
             className="md:hidden rounded-md"
           >
-            {sidebarOpen ? (
-              <HugeiconsIcon icon={PanelLeftCloseIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
-            ) : (
-              <HugeiconsIcon icon={PanelLeftOpenIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
-            )}
+            <SidebarOpenIcon />
           </Button>
+          <div className="flex h-6 items-center justify-center px-2 md:hidden">
+            <div className="w-[1.5px] h-full bg-border" />
+          </div>
+          </div>
         )}
 
         {/* Breadcrumb */}
@@ -143,7 +143,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
               variant="outline"
               size="sm"
               onClick={onAIAssistantClick}
-              className="gap-2 rounded-md text-foreground border-[0.5px]"
+              className="gap-2 rounded-md text-foreground border-[0.5px] w-8 h-8 sm:w-auto sm:h-auto"
             >
               <HugeiconsIcon icon={SparklesIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
               <span className="hidden sm:inline">{aiAssistantLabel}</span>
