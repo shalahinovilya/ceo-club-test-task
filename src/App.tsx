@@ -1,9 +1,65 @@
+import * as React from "react"
+import { Header } from "./components/header"
+import { SidebarNav } from "./components/sidebar-nav"
+import { ViewToolbar } from "./components/view-toolbar"
+import { EmptyState } from "./components/empty-state"
+import { Database } from "lucide-react"
+
 function App() {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false)
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Welcome</h1>
-        <p className="text-lg text-gray-600">Start building your app here</p>
+    <div className="flex h-screen bg-background relative">
+      {/* Mobile Backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
+          sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setSidebarOpen(false)}
+      />
+
+      {/* Sidebar */}
+      <div className={`fixed left-0 top-0 z-50 flex h-screen md:relative md:z-auto md:translate-x-0 transition-transform duration-300 ${
+        sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      }`}>
+        <SidebarNav
+          onHelpClick={() => console.log("Help clicked")}
+          onHeaderToggle={() => setSidebarOpen(false)}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <Header
+          breadcrumbs={[
+            {
+              icon: <Database className="h-4 w-4" />,
+              label: "Object name",
+            },
+          ]}
+          onMessageClick={() => console.log("Messages clicked")}
+          onHelpClick={() => console.log("Help clicked")}
+          onAIAssistantClick={() => console.log("AI Assistant clicked")}
+          onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
+          sidebarOpen={sidebarOpen}
+        />
+
+        {/* Toolbar */}
+        <ViewToolbar
+          viewName="View name"
+          onViewChange={(view) => console.log("View changed:", view)}
+          onSearch={(query) => console.log("Search:", query)}
+          onFilter={() => console.log("Filter clicked")}
+          onSort={() => console.log("Sort clicked")}
+          onColumnsClick={() => console.log("Columns clicked")}
+          onAddClick={() => console.log("Add clicked")}
+        />
+
+        {/* Content Area */}
+        <div className="flex-1 overflow-auto">
+          <EmptyState onButtonClick={() => console.log("Add clicked")} />
+        </div>
       </div>
     </div>
   )
