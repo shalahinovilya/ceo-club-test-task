@@ -104,7 +104,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <HugeiconsIcon icon={Tick01Icon} size={16} color="currentColor" />
+        <HugeiconsIcon icon={Tick01Icon} size={16} color="currentColor" strokeWidth={2} />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -127,7 +127,7 @@ const DropdownMenuRadioItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <HugeiconsIcon icon={CircleIcon} size={8} color="currentColor" />
+        <HugeiconsIcon icon={CircleIcon} size={8} color="currentColor" strokeWidth={2} />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}

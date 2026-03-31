@@ -61,7 +61,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground max-w-fit truncate"
               >
-                <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" className="shrink-0" />
+                <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" strokeWidth={2} className="shrink-0" />
                 <span className="hidden sm:inline">{selectedView}</span>
                 <span className="sm:hidden">View n...</span>
               </Button>
@@ -86,7 +86,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             aria-label="Search"
             className="text-foreground"
           >
-            <HugeiconsIcon icon={SearchIcon} size={16} color="currentColor" />
+            <HugeiconsIcon icon={SearchIcon} size={16} color="currentColor" strokeWidth={2} />
           </Button>
         </ToolbarLeft>
 
@@ -99,7 +99,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground"
               >
-                <HugeiconsIcon icon={FilterIcon} size={16} color="currentColor" className="shrink-0" />
+                <HugeiconsIcon icon={FilterIcon} size={16} color="currentColor" strokeWidth={2} className="shrink-0" />
                 <span className="hidden md:inline">{FILTER_LABEL_UK}</span>
               </Button>
             </DropdownMenuTrigger>
@@ -119,7 +119,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground"
               >
-                <HugeiconsIcon icon={ArrowUpDownIcon} size={16} color="currentColor" className="shrink-0" />
+                <HugeiconsIcon icon={ArrowUpDownIcon} size={16} color="currentColor" strokeWidth={2} className="shrink-0" />
                 <span className="hidden md:inline">{SORT_LABEL_UK}</span>
               </Button>
             </DropdownMenuTrigger>
@@ -141,7 +141,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             aria-label="Columns"
             className="text-foreground"
           >
-            <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" />
+            <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" strokeWidth={2} />
           </Button>
 
           {/* Add Button (Primary) */}
@@ -150,7 +150,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             className="text-sm font-medium text-primary-foreground md:px-2.5"
             onClick={onAddClick}
           >
-            <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" className="shrink-0" />
+            <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={2} className="shrink-0" />
             <span className="hidden md:inline">{ADD_BUTTON_LABEL_UK}</span>
           </Button>
         </ToolbarRight>

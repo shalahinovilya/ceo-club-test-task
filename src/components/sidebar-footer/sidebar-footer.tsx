@@ -27,7 +27,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
             aria-label={HELP_ICON_ARIA_LABEL}
             className="rounded-md"
           >
-            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" />
+            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" strokeWidth={2} />
           </Button>
         )}
       </div>

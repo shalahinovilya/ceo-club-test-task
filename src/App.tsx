@@ -4,7 +4,7 @@ import { SidebarNav } from "./components/sidebar-nav"
 import { ViewToolbar } from "./components/view-toolbar"
 import { EmptyState } from "./components/empty-state"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Database01Icon } from "@hugeicons/core-free-icons"
+import { Blockchain01Icon } from "@hugeicons/core-free-icons"
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
@@ -35,7 +35,7 @@ function App() {
         <Header
           breadcrumbs={[
             {
-              icon: <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" />,
+              icon: <HugeiconsIcon icon={Blockchain01Icon} size={16} color="currentColor" strokeWidth={2} />,
               label: "Object name",
             },
           ]}
