@@ -1,12 +1,12 @@
 import * as React from "react"
 import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  LayoutGridIcon,
+  Layout07Icon,
   SearchIcon,
+  FilterIcon,
   FilterHorizontalIcon,
   ArrowUpDownIcon,
   PlusSignIcon,
-  SlidersHorizontalIcon,
 } from "@hugeicons/core-free-icons"
 import { Button } from "../ui/button"
 import {
@@ -61,7 +61,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground max-w-fit truncate"
               >
-                <HugeiconsIcon icon={LayoutGridIcon} size={16} color="currentColor" className="shrink-0" />
+                <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" className="shrink-0" />
                 <span className="hidden sm:inline">{selectedView}</span>
                 <span className="sm:hidden">View n...</span>
               </Button>
@@ -99,7 +99,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground"
               >
-                <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" className="shrink-0" />
+                <HugeiconsIcon icon={FilterIcon} size={16} color="currentColor" className="shrink-0" />
                 <span className="hidden md:inline">{FILTER_LABEL_UK}</span>
               </Button>
             </DropdownMenuTrigger>
@@ -141,7 +141,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             aria-label="Columns"
             className="text-foreground"
           >
-            <HugeiconsIcon icon={SlidersHorizontalIcon} size={16} color="currentColor" />
+            <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" />
           </Button>
 
           {/* Add Button (Primary) */}

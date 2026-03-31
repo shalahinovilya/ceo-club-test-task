@@ -1,7 +1,7 @@
 import * as React from "react"
 import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  Message01Icon,
+  MessageMultiple02Icon,
   HelpCircleIcon,
   MoreVerticalIcon,
   SparklesIcon,
@@ -101,7 +101,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Messages"
             className="rounded-md"
           >
-            <HugeiconsIcon icon={Message01Icon} size={16} color="currentColor" />
+            <HugeiconsIcon icon={MessageMultiple02Icon} size={16} color="currentColor" />
           </Button>
 
           {/* Help Button */}
