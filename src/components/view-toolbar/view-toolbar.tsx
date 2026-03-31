@@ -204,7 +204,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                             className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
                           />
                         </div>
-                        <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto">
+                        <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto [&_[data-highlighted]:last-child]:!bg-transparent [&_[data-highlighted]:last-child]:!text-inherit">
                           {DEFAULT_ATTRIBUTES.map((attr) => (
                             <ComboboxItem
                               key={attr.value}
@@ -274,7 +274,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                   className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
                 />
               </div>
-              <ComboboxList className="max-h-[calc(80vh-150px)] overflow-y-auto">
+              <ComboboxList className="max-h-[calc(80vh-150px)] overflow-y-auto [&_[data-highlighted]:last-child]:bg-transparent [&_[data-highlighted]:last-child]:text-inherit">
                 {DEFAULT_ATTRIBUTES.map((attr) => (
                   <ComboboxItem
                     key={attr.value}
