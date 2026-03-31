@@ -62,12 +62,12 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
                     <BreadcrumbItem>
                       {crumb.href ? (
                         <BreadcrumbLink href={crumb.href} className="flex items-center gap-1.5">
-                          {crumb.icon && <span className="shrink-0">{crumb.icon}</span>}
+                          {crumb.icon && <span className="shrink-0 text-foreground opacity-70">{crumb.icon}</span>}
                           <span>{crumb.label}</span>
                         </BreadcrumbLink>
                       ) : (
                         <BreadcrumbPage className="flex items-center gap-1.5">
-                          {crumb.icon && <span className="shrink-0">{crumb.icon}</span>}
+                          {crumb.icon && <span className="shrink-0 text-foreground opacity-70">{crumb.icon}</span>}
                           <span>{crumb.label}</span>
                         </BreadcrumbPage>
                       )}
