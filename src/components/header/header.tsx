@@ -89,7 +89,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Messages"
             className="rounded-md"
           >
-            <HugeiconsIcon icon={MessageMultiple02Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+            <HugeiconsIcon icon={MessageMultiple02Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground" />
           </Button>
 
           {/* Help Button */}
@@ -100,7 +100,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
             aria-label="Help"
             className="rounded-md"
           >
-            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+            <HugeiconsIcon icon={HelpCircleIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground" />
           </Button>
 
           {/* More Options Dropdown */}
@@ -112,7 +112,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
                 aria-label="More options"
                 className="rounded-md"
               >
-                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={1} absoluteStrokeWidth />
+                <HugeiconsIcon icon={MoreVerticalIcon} size={16} color="currentColor" strokeWidth={1} absoluteStrokeWidth className="text-muted-foreground" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">

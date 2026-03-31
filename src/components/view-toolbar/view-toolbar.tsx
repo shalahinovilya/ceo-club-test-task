@@ -91,7 +91,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 variant="outline"
                 className="text-sm font-medium text-foreground max-w-fit truncate gap-2 py-1.5 h-auto border-[0.5px]"
               >
-                <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0" />
+                <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="shrink-0 text-muted-foreground" />
                 <span className="truncate max-w-[60px] sm:max-w-none">{selectedView}</span>
                 <ChevronDownIcon />
               </Button>
@@ -116,7 +116,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             aria-label="Search"
             className="text-foreground border-[0.5px]"
           >
-            <HugeiconsIcon icon={SearchIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+            <HugeiconsIcon icon={SearchIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground" />
           </Button>
         </ToolbarLeft>
 
