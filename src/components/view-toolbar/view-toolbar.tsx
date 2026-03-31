@@ -196,7 +196,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                       >
                         <div className="p-1">
                           <ComboboxInput
-                            placeholder="Пошук..."
+                            placeholder="Пошук атрибута..."
                             showClear={false}
                             showTrigger={false}
                             className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
@@ -265,7 +265,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             >
               <div className="mb-3">
                 <ComboboxInput
-                  placeholder="Пошук..."
+                  placeholder="Пошук атрибута..."
                   showClear={false}
                   showTrigger={false}
                   className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
