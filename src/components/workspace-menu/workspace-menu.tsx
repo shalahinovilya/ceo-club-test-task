@@ -7,6 +7,7 @@ import {
   Logout01Icon,
   PlusSignIcon,
   Tick02Icon,
+  ArrowRight01Icon,
 } from "@hugeicons/core-free-icons"
 import {
   DropdownMenu,
@@ -86,7 +87,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
           <DropdownMenuItem className="gap-2">
             <HugeiconsIcon icon={Sun03Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground" />
             <span className="flex-1">Вигляд</span>
-            <span className="text-xs">→</span>
+            <HugeiconsIcon icon={ArrowRight01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
