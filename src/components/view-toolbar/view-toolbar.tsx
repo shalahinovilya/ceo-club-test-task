@@ -11,6 +11,7 @@ import {
   Layers01Icon,
   Download01Icon,
   Database01Icon,
+  ArrowRight01Icon,
 } from "@hugeicons/core-free-icons"
 import { ChevronDownIcon } from "@/icons/chevron-down-icon"
 import { Button } from "../ui/button"
@@ -175,7 +176,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                 <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-44">
+            <DropdownMenuContent align="end" className="w-[188px]">
               <DropdownMenuGroup>
                 {isMobile ? (
                   <DropdownMenuItem onClick={() => setAttributesSheetOpen(true)} className="gap-2">
@@ -184,9 +185,10 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                   </DropdownMenuItem>
                 ) : (
                   <DropdownMenuSub>
-                    <DropdownMenuSubTrigger className="gap-2">
+                    <DropdownMenuSubTrigger className="gap-2 w-full">
                       <HugeiconsIcon icon={EyeIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
                       <span>Видимі атрибути</span>
+                      <HugeiconsIcon icon={ArrowRight01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0 ml-auto" />
                     </DropdownMenuSubTrigger>
                     <DropdownMenuSubContent className="p-0 w-[237px]">
                       <Combobox
@@ -219,9 +221,10 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                   </DropdownMenuSub>
                 )}
                 <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="gap-2">
+                  <DropdownMenuSubTrigger className="gap-2 w-full">
                     <HugeiconsIcon icon={Layers01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
                     <span>Групувати за</span>
+                    <HugeiconsIcon icon={ArrowRight01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0 ml-auto" />
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent>
                     <DropdownMenuItem>Поле 1</DropdownMenuItem>
