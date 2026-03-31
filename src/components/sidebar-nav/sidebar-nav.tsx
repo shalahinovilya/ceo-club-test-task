@@ -73,7 +73,7 @@ const SidebarNav = React.forwardRef<HTMLDivElement, SidebarNavProps>(
           {/* Records Group */}
           {recordsItems.length > 0 && (
             <SidebarGroup className="border-b-[0.5px] border-sidebar-border">
-              <SidebarGroupLabel>{RECORDS_LABEL}</SidebarGroupLabel>
+              <SidebarGroupLabel className="font-medium">{RECORDS_LABEL}</SidebarGroupLabel>
               <SidebarMenu>
                 {recordsItems.map((item, index) => (
                   <SidebarMenuItem key={index}>
