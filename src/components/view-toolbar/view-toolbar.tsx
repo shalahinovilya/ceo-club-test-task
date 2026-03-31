@@ -8,6 +8,7 @@ import {
   ArrowUpDownIcon,
   PlusSignIcon,
 } from "@hugeicons/core-free-icons"
+import { ChevronDownIcon } from "@/icons/chevron-down-icon"
 import { Button } from "../ui/button"
 import {
   Toolbar as ToolbarPrimitive,
@@ -59,11 +60,11 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="text-sm font-medium text-foreground max-w-fit truncate"
+                className="text-sm font-medium text-foreground max-w-fit truncate gap-2 py-1.5 h-auto border-[0.5px]"
               >
                 <HugeiconsIcon icon={Layout07Icon} size={16} color="currentColor" strokeWidth={2} className="shrink-0" />
-                <span className="hidden sm:inline">{selectedView}</span>
-                <span className="sm:hidden">View n...</span>
+                <span className="truncate max-w-[60px] sm:max-w-none">{selectedView}</span>
+                <ChevronDownIcon />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
@@ -84,7 +85,7 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             size="icon"
             onClick={() => onSearch?.("")}
             aria-label="Search"
-            className="text-foreground"
+            className="text-foreground border-[0.5px]"
           >
             <HugeiconsIcon icon={SearchIcon} size={16} color="currentColor" strokeWidth={2} />
           </Button>
