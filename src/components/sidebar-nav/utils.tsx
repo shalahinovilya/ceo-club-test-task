@@ -9,7 +9,7 @@ import {
 } from "@hugeicons/core-free-icons"
 
 export function getIconByType(iconType: string) {
-  const props = { size: 16, color: "currentColor", strokeWidth: 1.5, absoluteStrokeWidth: true }
+  const props = { size: 16, color: "currentColor", strokeWidth: 1.5, absoluteStrokeWidth: true, className: "text-foreground/50" }
   switch (iconType) {
     case "home-01":
       return <HugeiconsIcon icon={Home01Icon} {...props} />

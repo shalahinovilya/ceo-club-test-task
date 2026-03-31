@@ -55,7 +55,7 @@ const SidebarNav = React.forwardRef<HTMLDivElement, SidebarNavProps>(
         />
         <SidebarContent>
           {/* Main Navigation Group */}
-          <SidebarGroup>
+          <SidebarGroup className="border-b-[0.5px] border-sidebar-border">
             <SidebarMenu>
               {mainItems.map((item, index) => (
                 <SidebarMenuItem key={index}>
