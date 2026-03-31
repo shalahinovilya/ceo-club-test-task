@@ -62,7 +62,7 @@ const SidebarNav = React.forwardRef<HTMLDivElement, SidebarNavProps>(
                   <SidebarMenuButton
                     isActive={item.isActive}
                     onClick={item.onClick}
-                    className="gap-3"
+                    className="gap-2"
                   >
                     {item.icon}
                     <span>{item.label}</span>
@@ -82,7 +82,7 @@ const SidebarNav = React.forwardRef<HTMLDivElement, SidebarNavProps>(
                     <SidebarMenuButton
                       isActive={item.isActive}
                       onClick={item.onClick}
-                      className="gap-3"
+                      className="gap-2"
                     >
                       {item.icon}
                       <span>{item.label}</span>

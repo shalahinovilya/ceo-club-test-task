@@ -7,6 +7,10 @@ import {
   FilterHorizontalIcon,
   ArrowUpDownIcon,
   PlusSignIcon,
+  EyeIcon,
+  Layers01Icon,
+  Download01Icon,
+  Database01Icon,
 } from "@hugeicons/core-free-icons"
 import { ChevronDownIcon } from "@/icons/chevron-down-icon"
 import { Button } from "../ui/button"
@@ -18,13 +22,25 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuTrigger,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxList,
+  ComboboxItem,
+  ComboboxEmpty,
+} from "../ui/combobox"
 import {
   DEFAULT_VIEW_NAME,
   DEFAULT_VIEWS,
+  DEFAULT_ATTRIBUTES,
   FILTER_LABEL_UK,
   SORT_LABEL_UK,
   ADD_BUTTON_LABEL_UK,
@@ -46,11 +62,15 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
     ref
   ) => {
     const [selectedView, setSelectedView] = React.useState(viewName)
+    const [visibleAttributes, setVisibleAttributes] = React.useState<string[]>(
+      DEFAULT_ATTRIBUTES.map((a) => a.value)
+    )
 
     const handleViewChange = (value: string) => {
       setSelectedView(value)
       onViewChange?.(value)
     }
+
 
     return (
       <ToolbarPrimitive ref={ref}>
@@ -134,16 +154,75 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* Columns Button */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={onColumnsClick}
-            aria-label="Columns"
-            className="text-muted-foreground border-[0.5px]"
-          >
-            <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
-          </Button>
+          {/* Columns Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Columns"
+                className="text-muted-foreground border-[0.5px]"
+              >
+                <HugeiconsIcon icon={FilterHorizontalIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-44">
+              <DropdownMenuGroup>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="gap-2">
+                    <HugeiconsIcon icon={EyeIcon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                    <span>Видимі атрибути</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="p-0 w-[237px]">
+                    <Combobox
+                      multiple
+                      value={visibleAttributes}
+                      onValueChange={setVisibleAttributes}
+                    >
+                      <div className="p-1">
+                        <ComboboxInput
+                          placeholder="Пошук..."
+                          showClear={false}
+                          showTrigger={false}
+                          className="w-full !border-[0.5px] !border-ring !bg-input/30 rounded-lg has-[[data-slot=input-group-control]:focus-visible]:!ring-3 has-[[data-slot=input-group-control]:focus-visible]:!ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:!border-ring"
+                        />
+                      </div>
+                      <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto">
+                        <ComboboxEmpty>Нічого не знайдено</ComboboxEmpty>
+                        {DEFAULT_ATTRIBUTES.map((attr) => (
+                          <ComboboxItem
+                            key={attr.value}
+                            value={attr.value}
+                            className="h-7 max-h-7 py-1 pl-2.5 pr-8 gap-1.5"
+                          >
+                            <HugeiconsIcon icon={Database01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                            {attr.label}
+                          </ComboboxItem>
+                        ))}
+                      </ComboboxList>
+                    </Combobox>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="gap-2">
+                    <HugeiconsIcon icon={Layers01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                    <span>Групувати за</span>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Поле 1</DropdownMenuItem>
+                    <DropdownMenuItem>Поле 2</DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem className="gap-2" onClick={onColumnsClick}>
+                  <HugeiconsIcon icon={Download01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth className="text-muted-foreground shrink-0" />
+                  <span>Експорт</span>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           {/* Add Button (Primary) */}
           <Button
