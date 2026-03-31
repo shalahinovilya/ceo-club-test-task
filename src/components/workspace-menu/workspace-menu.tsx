@@ -28,7 +28,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <button
-          className="flex-1 flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors text-left outline-none"
+          className="flex-1 flex items-center gap-2 rounded-md hover:bg-muted transition-colors text-left outline-none"
         >
           {logo ? (
             <div className="shrink-0">{logo}</div>

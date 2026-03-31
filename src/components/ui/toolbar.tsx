@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const toolbarVariants = cva(
-  "flex items-center justify-between gap-2 border-b bg-background px-3.5 py-3.5",
+  "flex items-center justify-between gap-2 border-b-[0.5px] bg-background px-3.5 py-3.5",
   {
     variants: {
       variant: {
