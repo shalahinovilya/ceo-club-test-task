@@ -42,7 +42,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         </div>
 
         {/* Button */}
-        <Button onClick={onButtonClick} className="mt-4 gap-2">
+        <Button onClick={onButtonClick} className="gap-2">
           <HugeiconsIcon icon={PlusSignIcon} size={16} color="currentColor" strokeWidth={2} />
           {buttonLabel}
         </Button>

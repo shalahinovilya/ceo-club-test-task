@@ -16,7 +16,7 @@ function App() {
         className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
           sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        onClick={() => setSidebarOpen(false)}
+        onClick={(e) => e.target === e.currentTarget && setSidebarOpen(false)}
       />
 
       {/* Sidebar */}
