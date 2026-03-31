@@ -188,7 +188,6 @@ const ViewToolbar = React.forwardRef<HTMLDivElement, ViewToolbarProps>(
                         />
                       </div>
                       <ComboboxList className="px-1 pb-1 max-h-48 overflow-y-auto">
-                        <ComboboxEmpty>Нічого не знайдено</ComboboxEmpty>
                         {DEFAULT_ATTRIBUTES.map((attr) => (
                           <ComboboxItem
                             key={attr.value}
