@@ -4,7 +4,7 @@ import {
   UserIcon,
   Settings01Icon,
   Sun03Icon,
-  Logout01Icon,
+  Logout02Icon,
   PlusSignIcon,
   Tick02Icon,
   ArrowRight01Icon,
@@ -95,7 +95,7 @@ const WorkspaceMenu = ({ title, initials, logo }: WorkspaceMenuProps) => {
 
         <DropdownMenuGroup>
           <DropdownMenuItem className="gap-2 text-destructive">
-            <HugeiconsIcon icon={Logout01Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
+            <HugeiconsIcon icon={Logout02Icon} size={16} color="currentColor" strokeWidth={1.5} absoluteStrokeWidth />
             <span>Вийти</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
